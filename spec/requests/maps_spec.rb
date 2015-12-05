@@ -20,7 +20,7 @@ RSpec.describe "Maps", :type => :request do
           body = JSON.parse(response.body, symbolize_names: true)
 
           expect(response).to be_ok
-          expect(body).to eq({ route: ["A", "B", "D", "E", "C"], cost: 3.5 })
+          expect(body).to eq({ route: ["a", "b", "d", "e", "c"], cost: 3.5 })
         end
       end
 

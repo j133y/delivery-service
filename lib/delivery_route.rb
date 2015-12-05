@@ -6,6 +6,9 @@ class DeliveryRoute
     @edges = {}
 
     routes.each do |(origin, destination, distance)|
+      origin = origin.downcase
+      destination = destination.downcase
+
       @vertices[origin] ||= Vertex.new(origin, [], Float::INFINITY)
       @vertices[origin].neighbours << destination
 
@@ -17,8 +20,8 @@ class DeliveryRoute
   end
 
   def economic_path(delivery_info)
-    origin = delivery_info.fetch(:origin)
-    destination = delivery_info.fetch(:destination)
+    origin = delivery_info.fetch(:origin).downcase
+    destination = delivery_info.fetch(:destination).downcase
 
     return {} if @vertices.blank? || @vertices[origin].blank? || @vertices[destination].blank?
 
