@@ -12,7 +12,7 @@ RSpec.describe "Maps", :type => :request do
                         create(:route, map: map, origin: 'E', destination: 'C', distance: 1) ] }
 
       context 'when there is a route for delivery' do
-        let(:params) { { name: map.name, origin: 'A', destination: 'C', autonomy: 10, liter_price: 2.5 } }
+        let(:params) { { name: map.name.upcase, origin: 'A', destination: 'C', autonomy: 10, liter_price: 2.5 } }
 
         it 'returns the best route and its cost' do
           get estimate_delivery_api_maps_path(params)
