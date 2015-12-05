@@ -3,7 +3,7 @@ class Map < ActiveRecord::Base
 
   accepts_nested_attributes_for :routes
 
-  validates :name, uniqueness: true
+  validates :name, uniqueness: { case_sensitive: false }
 
   validates :name, presence: true
 end
