@@ -14,25 +14,25 @@ After setting the prerequisites you can start the project:
 
 1. Clone the project at the command prompt:
 
-```
-        git clone https://github.com/j133y/delivery-service.git
-    cd delivery-service
+```sh
+$ git clone https://github.com/j133y/delivery-service.git
+$ cd delivery-service
 ```
 
 2. Install the required gems:
-```
-        bundle install
+```sh
+$ bundle install
 ```
 
 3. Create the database and migrate the necessary database structure:
-```
-  rake db:create
-  rake db:migrate
+```sh
+$ rake db:create
+$ rake db:migrate
 ```
 
 4. Run the service:
-```
-        rails s
+```sh
+$ rails s
 ```
 
 5. After following the steps above, the project will bootup. The next section shows how to use the service.
@@ -50,7 +50,7 @@ By default, all requests receive the v1 version of the API. I encourage you to e
 
 
 ```
-        Accept: application/vnd.delivery.v1
+Accept: application/vnd.delivery.v1
 ```
 
 ### Schema
@@ -196,14 +196,20 @@ curl -XGET -H 'Accept: application/vnd.delivery.v1' -H "Content-Type: applicatio
 **Response**
 
 ```
-> GET /api/maps/estimate_delivery HTTP/1.1
-> Host: localhost:3000
-> User-Agent: curl/7.43.0
-> Accept: application/vnd.delivery.v1
+GET /api/maps/estimate_delivery HTTP/1.1
+Host: localhost:3000
+User-Agent: curl/7.43.0
+Accept: application/vnd.delivery.v1
 
 HTTP/1.1 200 OK
 
-{"route":["parati","rio de janeiro"],"cost":37.5}
+{
+  "route": [
+    "parati",
+    "rio de janeiro"
+  ],
+  "cost": 37.5
+}
 ```
 
 #### List maps
