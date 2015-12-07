@@ -29,7 +29,7 @@ class Api::V1::MapsController < ApplicationController
   #        :route_attributes - An Array of route objects.
   #              :origin - String with the origin route name.
   #              :destination - String with the destination route name.
-  #              :distance - Integer with the distante between origin and destination.
+  #              :distance - Integer with the distance between origin and destination.
   #
   # Examples:
   #   POST /maps
@@ -56,7 +56,7 @@ class Api::V1::MapsController < ApplicationController
   #   }
   #
   # Returns a json with the representation of the given map if created.
-  # Returns a exception json with status 422 if the map was not created.
+  # Returns an exception json with status 422 if the map was not created.
   def create
     @map = Map.new(map_params)
 
@@ -109,8 +109,8 @@ class Api::V1::MapsController < ApplicationController
   #   }
   #
   # Returns a json with the representation of the given map if updated.
-  # Returns a exception json with status 404 if the map was not found.
-  # Returns a exception json with status 422 if the map was not updated.
+  # Returns an exception json with status 404 if the map was not found.
+  # Returns an exception json with status 422 if the map was not updated.
   def update
     respond_to do |format|
       if @map.update(update_map_params)
@@ -129,7 +129,7 @@ class Api::V1::MapsController < ApplicationController
   #   DELETE /maps/:id
   #
   # Returns nothing if success.
-  # Returns a exception json with status 404 if the map was not found.
+  # Returns an exception json with status 404 if the map was not found.
   def destroy
     @map.destroy
 
@@ -159,7 +159,7 @@ class Api::V1::MapsController < ApplicationController
   #   }
   #
   # Returns a json with the representation of the delivery route path with cost.
-  # Returns a exception json with status 404 if the map was not found.
+  # Returns an exception json with status 404 if the map was not found.
   def estimate_delivery
     @map = Map.where('lower(name) = ?', estimate_delivery_params[:name].try(:downcase)).first
 
