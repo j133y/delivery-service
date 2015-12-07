@@ -24,7 +24,7 @@ RSpec.describe "Maps", :type => :request do
         end
       end
 
-      context 'when there is a route for delivery' do
+      context 'when there is no route for delivery' do
         let(:params) { { name: map.name, origin: 'Z', destination: 'C', autonomy: 10, liter_price: 2.5 } }
 
         it 'returns the best route and its cost' do
