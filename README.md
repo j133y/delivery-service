@@ -14,28 +14,34 @@ After setting the prerequisites you can start the project:
 
 1. Clone the project at the command prompt:
 
-```sh
-$ git clone https://github.com/j133y/delivery-service.git
-$ cd delivery-service
-```
+  ```sh
+  $ git clone https://github.com/j133y/delivery-service.git
+  $ cd delivery-service
+  ```
 
 2. Install the required gems:
-```sh
-$ bundle install
-```
+  ```sh
+  $ bundle install
+  ```
 
 3. Create the database and migrate the necessary database structure:
-```sh
-$ rake db:create
-$ rake db:migrate
-```
+  ```sh
+  $ rake db:create
+  $ rake db:migrate
+  ```
+  
+4. Run the tests:
+  ```sh
+  $ RAILS_ENV=test rake db:migrate
+  $ rspec
+  ```
 
-4. Run the service:
-```sh
-$ rails s
-```
+5. Run the service:
+  ```sh
+  $ rails s
+  ```
 
-5. After following the steps above, the project will bootup. The next section shows how to use the service.
+6. After following the steps above, the project will bootup. The next section shows how to use the service.
 
 
 ## Using the delivery service
