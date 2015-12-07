@@ -39,7 +39,7 @@ class Api::V1::MapsController < ApplicationController
   end
 
   def estimate_delivery
-    @map = Map.where('lower(name) = ?', estimate_delivery_params[:name].downcase).first
+    @map = Map.where('lower(name) = ?', estimate_delivery_params[:name].try(:downcase)).first
 
     if @map
       delivery_route = DeliveryRoute.new(@map.routes.map { |route| [route.origin, route.destination, route.distance] })
